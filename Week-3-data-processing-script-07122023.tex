@@ -1,0 +1,266 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Load the raw data}
+\NormalTok{raw\_data}\OtherTok{\textless{}{-}}\FunctionTok{read.csv}\NormalTok{(}\StringTok{"week 3/raw data/Week 3 Example Data.csv"}\NormalTok{)}
+
+\CommentTok{\#Create a copy of the raw data}
+\NormalTok{data}\OtherTok{\textless{}{-}}\NormalTok{raw\_data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#rename TIPI columns}
+\FunctionTok{colnames}\NormalTok{(data)[}\DecValTok{6}\SpecialCharTok{:}\DecValTok{15}\NormalTok{]}\OtherTok{\textless{}{-}}\FunctionTok{paste0}\NormalTok{(}\StringTok{"tipi"}\NormalTok{,}
+                             \FunctionTok{rep}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\StringTok{"E"}\NormalTok{,}\StringTok{"A"}\NormalTok{,}\StringTok{"C"}\NormalTok{,}\StringTok{"N"}\NormalTok{,}\StringTok{"O"}\NormalTok{),}\DecValTok{2}\NormalTok{),}
+                             \DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{)}
+
+\CommentTok{\#Append an R to reverse code}
+\FunctionTok{colnames}\NormalTok{(data)[}\FunctionTok{c}\NormalTok{(}\DecValTok{7}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{13}\SpecialCharTok{:}\DecValTok{15}\NormalTok{)]}\OtherTok{\textless{}{-}}\FunctionTok{paste0}\NormalTok{(}\FunctionTok{colnames}\NormalTok{(data)[}\FunctionTok{c}\NormalTok{(}\DecValTok{7}\NormalTok{,}\DecValTok{11}\NormalTok{,}\DecValTok{13}\SpecialCharTok{:}\DecValTok{15}\NormalTok{)],}\StringTok{"R"}\NormalTok{)}
+
+\DocumentationTok{\#\#\#Restructure Variables\#\#\#}
+
+\CommentTok{\#split the condition variable into two columns}
+\NormalTok{conditionSplit}\OtherTok{\textless{}{-}}\FunctionTok{str\_split\_fixed}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{condition,}\StringTok{"\_"}\NormalTok{,}\DecValTok{2}\NormalTok{)}
+
+\CommentTok{\#rename the newly created condition variables}
+\FunctionTok{colnames}\NormalTok{(conditionSplit)}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\StringTok{"shockCause"}\NormalTok{,}\StringTok{"pMoral"}\NormalTok{)}
+
+\CommentTok{\#Add the split columns to the data}
+\NormalTok{data}\OtherTok{\textless{}{-}}\FunctionTok{cbind}\NormalTok{(data,conditionSplit)}
+
+\NormalTok{data}\OtherTok{\textless{}{-}}\NormalTok{data[,}\SpecialCharTok{{-}}\DecValTok{4}\NormalTok{]}
+
+\CommentTok{\#recodes missing value as NAsa}
+\NormalTok{data}\SpecialCharTok{$}\NormalTok{guilt}\OtherTok{\textless{}{-}}\FunctionTok{ifelse}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{guilt}\SpecialCharTok{=={-}}\DecValTok{99}\NormalTok{,}\ConstantTok{NA}\NormalTok{,data}\SpecialCharTok{$}\NormalTok{guilt)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#for reverse coding add {-}1*data so the number is opposite +highest number on scale plus 1 at the end (8). Reverse code for the relevant TIPI items}
+
+\NormalTok{data[,}\FunctionTok{c}\NormalTok{(}\DecValTok{6}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{12}\SpecialCharTok{:}\DecValTok{14}\NormalTok{)]}\OtherTok{\textless{}{-}}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\SpecialCharTok{*}\NormalTok{data[,}\FunctionTok{c}\NormalTok{(}\DecValTok{6}\NormalTok{,}\DecValTok{10}\NormalTok{,}\DecValTok{12}\SpecialCharTok{:}\DecValTok{14}\NormalTok{)])}\SpecialCharTok{+}\DecValTok{8}
+
+\CommentTok{\#compute composite personality scores}
+\NormalTok{data}\SpecialCharTok{$}\NormalTok{extra}\OtherTok{\textless{}{-}}\FunctionTok{rowMeans}\NormalTok{(data[,}\FunctionTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{10}\NormalTok{)])}
+\NormalTok{data}\SpecialCharTok{$}\NormalTok{agree}\OtherTok{\textless{}{-}}\FunctionTok{rowMeans}\NormalTok{(data[,}\FunctionTok{c}\NormalTok{(}\DecValTok{6}\NormalTok{,}\DecValTok{11}\NormalTok{)])}
+\NormalTok{data}\SpecialCharTok{$}\NormalTok{consc}\OtherTok{\textless{}{-}}\FunctionTok{rowMeans}\NormalTok{(data[,}\FunctionTok{c}\NormalTok{(}\DecValTok{7}\NormalTok{,}\DecValTok{12}\NormalTok{)])}
+\NormalTok{data}\SpecialCharTok{$}\NormalTok{neuro}\OtherTok{\textless{}{-}}\FunctionTok{rowMeans}\NormalTok{(data[,}\FunctionTok{c}\NormalTok{(}\DecValTok{8}\NormalTok{,}\DecValTok{13}\NormalTok{)])}
+\NormalTok{data}\SpecialCharTok{$}\NormalTok{open}\OtherTok{\textless{}{-}}\FunctionTok{rowMeans}\NormalTok{(data[,}\FunctionTok{c}\NormalTok{(}\DecValTok{9}\NormalTok{,}\DecValTok{14}\NormalTok{)])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Rearrange }
+\NormalTok{data}\OtherTok{\textless{}{-}}\NormalTok{data[,}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{,}\DecValTok{5}\SpecialCharTok{:}\DecValTok{14}\NormalTok{,}\DecValTok{20}\SpecialCharTok{:}\DecValTok{24}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{18}\SpecialCharTok{:}\DecValTok{19}\NormalTok{,}\DecValTok{15}\SpecialCharTok{:}\DecValTok{17}\NormalTok{)]}
+
+\NormalTok{codebook}\OtherTok{\textless{}{-}}\FunctionTok{data.frame}\NormalTok{(}\StringTok{"variable"}\OtherTok{=}\FunctionTok{colnames}\NormalTok{(data))}
+
+\NormalTok{codebook}\SpecialCharTok{$}\NormalTok{description}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}
+  \StringTok{"Participant ID Number"}\NormalTok{,}
+  \StringTok{"Participant Sex"}\NormalTok{,}
+  \StringTok{"Age"}\NormalTok{,}
+  \StringTok{"TIPI Extraversion 1"}\NormalTok{,}
+  \StringTok{"TIPI Agreeableness 1(R)"}\NormalTok{,}
+  \StringTok{"TIPI Conscientiousness 1"}\NormalTok{,}
+  \StringTok{"TIPI Neuroticism 1"}\NormalTok{,}
+  \StringTok{"TIPI Openness 1"}\NormalTok{,}
+    \StringTok{"TIPI Extraversion 2(R)"}\NormalTok{,}
+  \StringTok{"TIPI Agreeableness 2"}\NormalTok{,}
+  \StringTok{"TIPI Conscientiousness 2(R)"}\NormalTok{,}
+  \StringTok{"TIPI Neuroticism 2(R)"}\NormalTok{,}
+  \StringTok{"TIPI Openness 2(R)"}\NormalTok{,}
+  \StringTok{"Composite Extraversion"}\NormalTok{,}
+  \StringTok{"Composite Openness"}\NormalTok{,}
+  \StringTok{"Composite Agreeableness"}\NormalTok{,}
+  \StringTok{"Composite Conscientiousness"}\NormalTok{,}
+  \StringTok{"Composite Neuroticism"}\NormalTok{,}
+  \StringTok{"Shock Voltage"}\NormalTok{,}
+  \StringTok{"Shock Cause (Participant vs. Partner"}\NormalTok{,}
+  \StringTok{"Partner Morality (good vs. bad)"}\NormalTok{,}
+  \StringTok{"Amount of Money shared with Partner (pre{-}shock)"}\NormalTok{,}
+  \StringTok{"Amount of Money shared with Partner (post{-}shock)"}\NormalTok{,}
+  \StringTok{"Guilt Reported by Partcipant"}
+\NormalTok{)}
+\CommentTok{\#saves the data type for each variable}
+\NormalTok{codebook}\SpecialCharTok{$}\NormalTok{type}\OtherTok{\textless{}{-}}\FunctionTok{sapply}\NormalTok{(data,class)}
+
+\CommentTok{\#output the codebook as a table}
+\FunctionTok{kable}\NormalTok{(codebook)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1571}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.7000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.1429}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+variable
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+description
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+type
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+PIN & Participant ID Number & integer \\
+sex & Participant Sex & character \\
+age & Age & integer \\
+tipiE1 & TIPI Extraversion 1 & integer \\
+tipiA2R & TIPI Agreeableness 1(R) & numeric \\
+tipiC3 & TIPI Conscientiousness 1 & integer \\
+tipiN4 & TIPI Neuroticism 1 & integer \\
+tipiO5 & TIPI Openness 1 & integer \\
+tipiE6R & TIPI Extraversion 2(R) & numeric \\
+tipiA7 & TIPI Agreeableness 2 & integer \\
+tipiC8R & TIPI Conscientiousness 2(R) & numeric \\
+tipiN9R & TIPI Neuroticism 2(R) & numeric \\
+tipiO10R & TIPI Openness 2(R) & numeric \\
+extra & Composite Extraversion & numeric \\
+agree & Composite Openness & numeric \\
+consc & Composite Agreeableness & numeric \\
+neuro & Composite Conscientiousness & numeric \\
+open & Composite Neuroticism & numeric \\
+shock & Shock Voltage & character \\
+shockCause & Shock Cause (Participant vs.~Partner & character \\
+pMoral & Partner Morality (good vs.~bad) & character \\
+preShare & Amount of Money shared with Partner (pre-shock) & integer \\
+postShare & Amount of Money shared with Partner (post-shock) &
+integer \\
+guilt & Guilt Reported by Partcipant & integer \\
+\end{longtable}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{write.csv}\NormalTok{(data,}\StringTok{"week 3/processed data/Week 3 DATA PROCESSED.csv"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+
+\end{document}
